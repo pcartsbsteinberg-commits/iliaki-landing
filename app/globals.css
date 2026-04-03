@@ -1,0 +1,105 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Iliaki Brand Colors */
+  --brand-dark: #0A0A0A;
+  --brand-dark-card: #111111;
+  --brand-dark-border: #1e1e1e;
+  --brand-lime: #32CD32;
+  --brand-lime-hover: #28b028;
+  --brand-lime-muted: rgba(50, 205, 50, 0.12);
+  --brand-lime-glow: rgba(50, 205, 50, 0.25);
+  --brand-white: #FFFFFF;
+  --brand-off-white: #F7F7F7;
+  --brand-gray: #6B7280;
+  --brand-light-gray: #E5E7EB;
+
+  /* Semantic Tokens */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.08 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.08 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.08 0 0);
+  --primary: #32CD32;
+  --primary-foreground: #0A0A0A;
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.08 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.45 0 0);
+  --accent: #32CD32;
+  --accent-foreground: #0A0A0A;
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.92 0 0);
+  --input: oklch(0.92 0 0);
+  --ring: #32CD32;
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --font-sans: var(--font-poppins), 'Poppins', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 8px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom utility classes */
+.lime-glow {
+  box-shadow: 0 0 20px var(--brand-lime-glow), 0 0 40px var(--brand-lime-glow);
+}
+.lime-text-glow {
+  text-shadow: 0 0 20px rgba(50, 205, 50, 0.5);
+}
+.dark-card-hover {
+  transition: all 0.3s ease;
+}
+.dark-card-hover:hover {
+  border-color: var(--brand-lime);
+  box-shadow: 0 0 0 1px var(--brand-lime), 0 8px 32px rgba(50, 205, 50, 0.1);
+  transform: translateY(-2px);
+}
+.section-separator {
+  border-top: 1px solid var(--brand-dark-border);
+}
+.stat-divider {
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
