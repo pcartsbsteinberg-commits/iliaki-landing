@@ -14,6 +14,7 @@ import CtaSection from "@/components/cta-section"
 import Footer from "@/components/footer"
 import FloatingWhatsApp from "@/components/floating-whatsapp"
 import SolarWizard from "@/components/SolarWizard"
+import CoursesSection from "@/components/CoursesSection"
 
 export const metadata: Metadata = {
   title: "Iliaki | Instalación Paneles Solares Autoconsumo",
@@ -46,6 +47,7 @@ export default function HomePage() {
       <TrustSection />
       <CtaSection />
       <SolarWizard step={1} /> {/* Integración de SolarWizard */}
+      <CoursesSection /> {/* Integración de CoursesSection */}
       <Footer />
       <FloatingWhatsApp />
     </main>
